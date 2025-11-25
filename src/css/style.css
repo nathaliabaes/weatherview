@@ -117,7 +117,7 @@ body {
   body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 1rem;
@@ -130,10 +130,7 @@ body {
   .container {
     width: 90%;
     max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 0 auto;
     padding: 1.5rem;
     border-radius: 0.8rem;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px;
@@ -141,12 +138,15 @@ body {
   }
 
   .form-input-container {
+    display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   .form input {
     margin-bottom: 0.6rem;
     width: 100%;
+    box-sizing: border-box;
   }
 
   .form button {
