@@ -16,18 +16,20 @@ const loadingElement = document.querySelector("#loading");
 // 1 - buscar clima (back-end)
 
 const getWeatherData = async (city) => {
-  const res = await fetch(`https://backend-weatherview.onrender.com/weather?city=${city}`);
+  const res = await fetch(`https://backend-weatherview.onrender.com/weather?city=${encodeURIComponent(city)}`);
   const data = await res.json();
   return data;
 };
+
 
 // 2 - buscar foto (back-end)
 
 const getPhoto = async (city) => {
-  const res = await fetch(`https://backend-weatherview.onrender.com/photo?city=${city}`);
+  const res = await fetch(`https://backend-weatherview.onrender.com/photo?city=${encodeURIComponent(city)}`);
   const data = await res.json();
   return data;
 };
+
 
 // 3 - troca background
 
@@ -101,3 +103,4 @@ cityInput.addEventListener("keyup", (e) => {
     showWeatherData(city);
   }
 });
+
