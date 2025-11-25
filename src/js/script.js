@@ -16,7 +16,7 @@ const loadingElement = document.querySelector("#loading");
 // 1 - buscar clima (back-end)
 
 const getWeatherData = async (city) => {
-  const res = await fetch(`http://localhost:3000/weather?city=${city}`);
+  const res = await fetch(`https://backend-weatherview.onrender.com/weather?city=${city}`);
   const data = await res.json();
   return data;
 };
@@ -24,7 +24,7 @@ const getWeatherData = async (city) => {
 // 2 - buscar foto (back-end)
 
 const getPhoto = async (city) => {
-  const res = await fetch(`http://localhost:3000/photo?city=${city}`);
+  const res = await fetch(`https://backend-weatherview.onrender.com/photo?city=${city}`);
   const data = await res.json();
   return data;
 };
