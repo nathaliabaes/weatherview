@@ -6,17 +6,18 @@
 }
 
 body {
-    background: url("../img/cloud.jpg");
-    background-repeat: no-repeat;
+    background: url("../img/cloud.jpg") no-repeat center center;
     background-size: cover;
+    background-position: center top;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;    
+    min-height: 100vh;
     transition: background-image 1s ease-in-out;
-}   
+}
 
-.hide { /* Classe para esconder elementos */
+
+.hide {
     display: none;
 }
 
@@ -61,7 +62,7 @@ body {
     color: #fff;
 }
 
-#weather-data, #error{ /*espaçamento*/
+#weather-data, #error{
     border-top: 1px solid #FFF;   
     margin-top: 1.5rem;    
     padding-top: 1.5rem;   
@@ -109,4 +110,81 @@ body {
     border-right: 1px solid #FFF;
     margin: 0.6rem;
     padding: 0.6rem;    
+}
+
+/* RESPONSIVIDADE PARA MOBILE */
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background: url("../img/cloud.jpg") no-repeat center top;
+    background-size: cover;
+    transition: background-image 1s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px;
+    box-sizing: border-box;
+  }
+
+  .form-input-container {
+    flex-direction: column;
+  }
+
+  .form input {
+    margin-bottom: 0.6rem;
+    width: 100%;
+  }
+
+  .form button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #weather-data, #error {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  #details-container {
+    flex-direction: column;
+  }
+
+  #details-container #humidity {
+    border-right: none;
+    border-bottom: 1px solid #FFF;
+    margin: 0.4rem 0;
+    padding: 0.4rem 0;
+  }
+
+  #weather-data h2 {
+    flex-direction: column;
+  }
+
+  #description-container {
+    flex-direction: column;
+    margin: 0.4rem 0;
+  }
+
+  #weather-data span {
+    display: block;
+    margin: 0.3rem 0;
+  }
+
+  #country {
+    height: 12px;
+  }
 }
