@@ -132,8 +132,15 @@ body {
   }
 
   .form-input-container {
+    display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 0.5rem;
+  }
+
+  #city-input {
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .form input {
