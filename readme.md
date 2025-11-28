@@ -2,8 +2,8 @@
 
 <p align="center"> <strong>Este é um projeto de estudo 👩🏻‍💻</strong> </p>
 
-Aplicação que exibe a previsão do tempo para qualquer cidade, consumindo dados de APIs externas.
-Desenvolvido para aprimorar conhecimentos em **consumo de APIs** e integração entre **frontend** e **backend**.
+<p align="center"> Aplicação que exibe a previsão do tempo para qualquer cidade, consumindo dados de APIs externas.
+Desenvolvido para aprimorar conhecimentos em **consumo de APIs** e integração entre <strong>frontend</strong>  e <strong>backend</strong> .</p>
 
 ---
 
@@ -41,5 +41,5 @@ O back-end realiza as requisições externas e retorna ao frontend apenas os dad
 </p>
 
 <p align="center">
-    <a href="https://nathaliabaes.github.io/weatherview/">📱 Acesse este Projeto</a>
+    <a href="https://nathaliabaes.github.io/weatherview/>📱 Acesse este Projeto</a>
 </p>

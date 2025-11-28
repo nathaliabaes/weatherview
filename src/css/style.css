@@ -16,17 +16,16 @@ body {
     transition: background-image 1s ease-in-out;
 }
 
-
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .container {
     background: linear-gradient(180deg, #5670ff 0%, #8fd3f4 100%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 2rem; 
+    padding: 2rem;
     color:#FDFDFD;
-    border-radius: 1rem; 
+    border-radius: 1rem;
 }
 
 .form h3 {
@@ -38,7 +37,7 @@ body {
 }
 
 .form input {
-    padding: .8rem; 
+    padding: .8rem;
     border: none;
     flex: 1;
     border-radius: 4px;
@@ -62,15 +61,16 @@ body {
     color: #fff;
 }
 
-#weather-data, #error{
-    border-top: 1px solid #FFF;   
-    margin-top: 1.5rem;    
-    padding-top: 1.5rem;   
+#weather-data, 
+#error {
+    border-top: 1px solid #FFF;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
     text-align: center;
 }
 
 #weather-data h2 {
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: .6rem;
@@ -93,9 +93,6 @@ body {
     justify-content: center;
     align-items: center;
     margin: .6rem 0;
-}
-
-#description-container {
     font-weight: bold;
     text-transform: capitalize;
 }
@@ -104,41 +101,37 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-#details-container #humidity {
-    border-right: 1px solid #FFF;
-    margin: 0.6rem;
-    padding: 0.6rem;    
-}
-
-/* RESPONSIVIDADE PARA MOBILE */
-@media (max-width: 768px) {
-  body {
+#details-container p {
+    width: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    gap: 0.4rem;
+}
+
+#humidity {
+    border-right: 1px solid #FFF;
+    padding-right: 0.6rem;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
     padding: 1rem;
-    background: url("../img/cloud.jpg") no-repeat center top;
-    background-size: cover;
-    transition: background-image 1s ease-in-out;
-    box-sizing: border-box;
   }
 
   .container {
     width: 90%;
     max-width: 400px;
-    margin: 0 auto;
     padding: 1.5rem;
     border-radius: 0.8rem;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px;
-    box-sizing: border-box;
   }
 
   .form-input-container {
-    display: flex;
     flex-direction: column;
     width: 100%;
   }
@@ -146,7 +139,6 @@ body {
   .form input {
     margin-bottom: 0.6rem;
     width: 100%;
-    box-sizing: border-box;
   }
 
   .form button {
@@ -154,37 +146,63 @@ body {
     margin-left: 0;
   }
 
-  #weather-data, #error {
+  #weather-data,
+  #error {
     margin-top: 1rem;
     padding-top: 1rem;
   }
 
-  #details-container {
+  #weather-data {
+    display: flex;
     flex-direction: column;
-  }
-
-  #details-container #humidity {
-    border-right: none;
-    border-bottom: 1px solid #FFF;
-    margin: 0.4rem 0;
-    padding: 0.4rem 0;
+    gap: 1rem;
   }
 
   #weather-data h2 {
-    flex-direction: column;
-  }
-
-  #description-container {
-    flex-direction: column;
-    margin: 0.4rem 0;
+    flex-direction: row;
+    gap: 0.4rem;
   }
 
   #weather-data span {
-    display: block;
-    margin: 0.3rem 0;
+    margin: 0.2rem 0.3rem 0.2rem 0;
   }
 
   #country {
-    height: 12px;
+    width: 20px;
+  }
+
+  #temperature {
+    font-size: 2rem;
+  }
+
+  #description-container {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin: 0.4rem 0;
+  }
+
+  #description {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  #weather-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  #details-container {
+    gap: 0.8rem;
+  }
+
+  #details-container p {
+    gap: 0.4rem;
+    font-size: 1rem;
+  }
+
+  #humidity {
+    border-right: 1px solid #ffffff70;
+    padding-right: 0.6rem;
+    margin-right: 0.6rem;
   }
 }

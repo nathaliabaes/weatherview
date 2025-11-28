@@ -13,26 +13,27 @@ const weatherContainer = document.querySelector("#weather-data");
 const errorMessage = document.querySelector("#error");
 const loadingElement = document.querySelector("#loading");
 
-// 1 - buscar clima (back-end)
 
+// função genérica para requisições JSON
+const fetchJSON = async (url) => {
+  const res = await fetch(url);
+  return res.json();
+};
+
+
+// 1 - buscar clima (back-end)
 const getWeatherData = async (city) => {
-  const res = await fetch(`https://backend-weatherview.onrender.com/weather?city=${encodeURIComponent(city)}`);
-  const data = await res.json();
-  return data;
+  return fetchJSON(`https://backend-weatherview.onrender.com/weather?city=${encodeURIComponent(city)}`);
 };
 
 
 // 2 - buscar foto (back-end)
-
 const getPhoto = async (city) => {
-  const res = await fetch(`https://backend-weatherview.onrender.com/photo?city=${encodeURIComponent(city)}`);
-  const data = await res.json();
-  return data;
+  return fetchJSON(`https://backend-weatherview.onrender.com/photo?city=${encodeURIComponent(city)}`);
 };
 
 
 // 3 - troca background
-
 const setBackgroundImage = async (city) => {
   try {
     const data = await getPhoto(city);
@@ -45,13 +46,14 @@ const setBackgroundImage = async (city) => {
       document.body.style.backgroundPosition = "center";
       document.body.style.transition = "background-image 1s ease";
     }
+
   } catch (error) {
     console.log(error);
   }
 };
 
-// 4 - mostrar os dados
 
+// 4 - mostrar os dados
 const showWeatherData = async (city) => {
   loadingElement.classList.remove("hide");
 
@@ -90,7 +92,8 @@ const showWeatherData = async (city) => {
   loadingElement.classList.add("hide");
 };
 
-//Eventos
+
+// eventos
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
   const city = cityInput.value;
@@ -103,4 +106,3 @@ cityInput.addEventListener("keyup", (e) => {
     showWeatherData(city);
   }
 });
-
